@@ -3,124 +3,28 @@
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
-/* HEADER PÅ SCROLL */
-const Header = {
-  init() {
-    const el = $("#header");
-    if (!el) return;
-    window.addEventListener(
-      "scroll",
-      () => {
-        el.classList.toggle("skrollet", window.scrollY > 40);
-      },
-      { passive: true },
-    );
-  },
-};
+/* Mobilmeny */
+const navToggle = $("#navToggle");
+const navLinks = $("#navLinks");
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    const open = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!open));
+    navLinks.classList.toggle("åpen", !open);
+  });
+  $$(".nav__links a").forEach((a) =>
+    a.addEventListener("click", () => {
+      navLinks.classList.remove("åpen");
+      navToggle.setAttribute("aria-expanded", "false");
+    }),
+  );
+}
 
-/* MOBILMENY */
-const Meny = {
-  init() {
-    const knapp = $("#navToggle");
-    const liste = $("#navLinks");
-    if (!knapp || !liste) return;
-
-    const lukk = () => {
-      knapp.setAttribute("aria-expanded", "false");
-      liste.classList.remove("åpen");
-      document.body.style.overflow = "";
-    };
-
-    knapp.addEventListener("click", () => {
-      const åpen = knapp.getAttribute("aria-expanded") === "true";
-      knapp.setAttribute("aria-expanded", String(!åpen));
-      liste.classList.toggle("åpen", !åpen);
-      document.body.style.overflow = !åpen ? "hidden" : "";
-    });
-
-    $$(".nav__links a").forEach((a) => a.addEventListener("click", lukk));
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") lukk();
-    });
-  },
-};
-
-/* REVEAL */
-const Reveal = {
-  init() {
-    const el = $$(".reveal");
-    if (!el.length) return;
-
-    if (!("IntersectionObserver" in window)) {
-      el.forEach((e) => e.classList.add("synlig"));
-      return;
-    }
-
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("synlig");
-            obs.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -50px 0px" },
-    );
-
-    el.forEach((e, i) => {
-      e.style.transitionDelay = `${Math.min(i % 4, 3) * 80}ms`;
-      obs.observe(e);
-    });
-  },
-};
-
-/* AKTIV SEKSJON */
-const Aktiv = {
-  init() {
-    const seksjoner = $$("section[id]");
-    if (!seksjoner.length || !("IntersectionObserver" in window)) return;
-
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const id = e.target.id;
-            $$(".nav__links a").forEach((a) => {
-              a.classList.toggle("aktiv", a.getAttribute("href") === `#${id}`);
-            });
-          }
-        });
-      },
-      { threshold: 0.4 },
-    );
-
-    seksjoner.forEach((s) => obs.observe(s));
-  },
-};
-
-/* SMOOTH ANKER */
-const Anker = {
-  init() {
-    $$('a[href^="#"]').forEach((l) => {
-      l.addEventListener("click", (e) => {
-        const href = l.getAttribute("href");
-        if (href === "#" || href.length < 2) return;
-        const mål = document.querySelector(href);
-        if (!mål) return;
-        e.preventDefault();
-        const topp = mål.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top: topp, behavior: "smooth" });
-      });
-    });
-  },
-};
-
-/* QUIZ */
+/* Quiz */
 const Quiz = {
   sporsmal: [
     {
-      spm: "Hvor mange % av skolelederne i ungdomsskolen sier at elevene bruker KI?",
+      spm: "Hvor mange prosent av skolelederne på ungdomsskolen sier elevene bruker KI?",
       svar: [
         { tekst: "89 %", riktig: true },
         { tekst: "65 %", riktig: false },
@@ -158,10 +62,10 @@ const Quiz = {
       forklaring: "De mener KI gjør læring enklere og tryggere.",
     },
     {
-      spm: "Hva sier statistikken om unge 21–30 år i AI-utsatte yrker?",
+      spm: "Hva skjedde med sysselsettingen blant unge 21–30 år i KI-utsatte yrker?",
       svar: [
-        { tekst: "Sysselsettingen steg med 6,6 %", riktig: false },
-        { tekst: "Sysselsettingen sank med 6,6 %", riktig: true },
+        { tekst: "Den steg med 6,6 %", riktig: false },
+        { tekst: "Den sank med 6,6 %", riktig: true },
         { tekst: "Ingen endring", riktig: false },
       ],
       forklaring:
@@ -196,7 +100,6 @@ const Quiz = {
     this.neste = $("#nesteKnapp");
 
     if (!this.startKnapp) return;
-
     this.startKnapp.addEventListener("click", () => this.start());
     this.neste.addEventListener("click", () => this.nesteSporsmal());
   },
@@ -221,7 +124,7 @@ const Quiz = {
     this.feedback.textContent = "";
     this.neste.disabled = true;
     this.neste.textContent =
-      this.indeks === this.sporsmal.length - 1 ? "Se resultat →" : "Neste →";
+      this.indeks === this.sporsmal.length - 1 ? "Se resultat" : "Neste";
 
     this.svarBoks.innerHTML = "";
     s.svar.forEach((alt) => {
@@ -243,14 +146,14 @@ const Quiz = {
     if (alt.riktig) {
       knapp.classList.add("riktig");
       this.poeng++;
-      this.feedback.textContent = `✓ Riktig! ${this.sporsmal[this.indeks].forklaring}`;
+      this.feedback.textContent = `Riktig! ${this.sporsmal[this.indeks].forklaring}`;
     } else {
       knapp.classList.add("feil");
       const riktigSvar = this.sporsmal[this.indeks].svar.find((a) => a.riktig);
       alle.forEach((b) => {
         if (b.textContent === riktigSvar.tekst) b.classList.add("riktig");
       });
-      this.feedback.textContent = `✕ Ikke helt. ${this.sporsmal[this.indeks].forklaring}`;
+      this.feedback.textContent = `Ikke helt. ${this.sporsmal[this.indeks].forklaring}`;
     }
 
     this.poengTeller.textContent = `${this.poeng} poeng`;
@@ -268,56 +171,33 @@ const Quiz = {
     this.resultat.classList.remove("skjult");
 
     const prosent = Math.round((this.poeng / this.sporsmal.length) * 100);
-    const profil = this.beregnProfil(prosent);
+    let tittel, tekst;
+    if (prosent >= 90) {
+      tittel = "KI-ekspert";
+      tekst = "Du har full kontroll på temaet.";
+    } else if (prosent >= 70) {
+      tittel = "Bevisst bruker";
+      tekst = "God oversikt — men det finnes alltid mer å lære.";
+    } else if (prosent >= 50) {
+      tittel = "På vei";
+      tekst = "Du har grunnlaget. Hør episoden en gang til.";
+    } else {
+      tittel = "Nysgjerrig";
+      tekst = "Ingen skam — start med podkasten, og prøv igjen.";
+    }
 
     this.resultat.innerHTML = `
-      <h3>${profil.tittel}</h3>
+      <h3>${tittel}</h3>
       <div class="quiz__resultat-sirkel" style="--prosent:${prosent}">
         <span>${prosent}%</span>
       </div>
-      <p>${profil.tekst}</p>
-      <p style="color:var(--accent-2);font-family:'JetBrains Mono',monospace;font-size:.8rem">
-        ${this.poeng} / ${this.sporsmal.length} poeng
-      </p>
-      <button id="restartKnapp" class="knapp knapp--primaer" type="button">Prøv igjen</button>
+      <p>${tekst}</p>
+      <p class="poeng">${this.poeng} av ${this.sporsmal.length} riktige</p>
+      <button id="restartKnapp" class="knapp" type="button">Prøv igjen</button>
     `;
 
     $("#restartKnapp").addEventListener("click", () => this.start());
   },
-
-  beregnProfil(prosent) {
-    if (prosent >= 90)
-      return {
-        tittel: "🏆 KI-ekspert",
-        tekst: "Du har full kontroll. Nå kan du hjelpe andre å forstå KI.",
-      };
-    if (prosent >= 70)
-      return {
-        tittel: "🧠 Bevisst bruker",
-        tekst: "God oversikt! Du ser gjennom det meste.",
-      };
-    if (prosent >= 50)
-      return {
-        tittel: "📚 På vei",
-        tekst: "Du har grunnlaget. Hør episoden en gang til.",
-      };
-    return {
-      tittel: "🌊 Nysgjerrig",
-      tekst: "Ingen skam! Start med podkasten – så tar du quizen igjen.",
-    };
-  },
 };
 
-/* INIT */
-document.addEventListener("DOMContentLoaded", () => {
-  Header.init();
-  Meny.init();
-  Reveal.init();
-  Aktiv.init();
-  Anker.init();
-  Quiz.init();
-  console.log(
-    "%cKI-Ishiki · klar 🎙️",
-    "color:#E23E57;font-weight:700;font-size:14px",
-  );
-});
+document.addEventListener("DOMContentLoaded", () => Quiz.init());
