@@ -3,316 +3,689 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ekte eller KI? — KI-Ishiki Podcast</title>
-    <!-- FAVICON: bytt ut til din egen (legg ikon.png i samme mappe) -->
-    <link rel="icon" href="ikon.png" />
+    <meta name="theme-color" content="#faf4ea" />
+    <meta
+      name="description"
+      content="KI-Ishiki Podcast – Ekte eller KI? En podkast om kunstig intelligens, skole, sosiale medier og fremtidens arbeidsliv."
+    />
+    <title>Ekte eller KI? · KI-Ishiki Podcast</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Outfit:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <header class="header" id="header">
-      <nav class="nav">
-        <a href="#hjem" class="logo">
-          <!-- LOGO-BILDE: legg logo.png i samme mappe, eller fjern <img> -->
-          <span class="logo__plass">
-            <img
-              src="logo.png"
-              alt="KI-Ishiki logo"
-              onerror="this.style.display = 'none'"
-            />
-          </span>
-          KI-Ishiki<span>.</span>
+    <a class="skip" href="#hoved">Hopp til innhold</a>
+
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav__inner">
+        <a href="#top" class="nav__logo">
+          <span class="nav__mark">KI</span>
+          <span class="nav__name">Ishiki</span>
         </a>
-        <ul class="nav__links" id="navLinks">
-          <li><a href="#fakta">Fakta</a></li>
-          <li><a href="#episode">Episode</a></li>
-          <li><a href="#deltakere">Deltakere</a></li>
-          <li><a href="#quiz">Quiz</a></li>
-          <li><a href="#kilder">Kilder</a></li>
-        </ul>
+        <nav class="nav__links" id="navLinks">
+          <a href="#episode">Episoden</a>
+          <a href="#cast">Deltakere</a>
+          <a href="#temaer">Temaer</a>
+          <a href="#myte">Myte / Fakta</a>
+          <a href="#regler">Regler</a>
+          <a href="#quiz">Quiz</a>
+        </nav>
+        <a href="#episode" class="nav__cta">▶ Hør nå</a>
         <button
           class="nav__toggle"
           id="navToggle"
-          aria-label="Meny"
+          aria-label="Åpne meny"
           aria-expanded="false"
         >
-          <span></span><span></span><span></span>
+          <span></span><span></span>
         </button>
-      </nav>
+      </div>
     </header>
 
-    <main>
-      <section id="hjem" class="hero">
-        <div class="container hero__grid">
-          <div class="hero__tekst">
-            <p class="hero__merke">Episode 01 — KI-Ishiki Podcast</p>
-            <h1>Ekte eller KI?</h1>
-            <p class="hero__lead">
-              Kan du stole på alt du ser på nettet? Vi har laget en podkast om
-              kunstig intelligens, skole, sosiale medier og fremtidens
-              arbeidsliv.
+    <main id="hoved">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="inner">
+          <div class="hero__grid">
+            <div class="hero__content">
+              <div class="hero__tags">
+                <span class="tag">Podkast</span>
+                <span class="tag">12 min</span>
+                <span class="tag">For ungdom</span>
+              </div>
+
+              <h1 class="hero__title">
+                <span class="w">Ekte</span>
+                <span class="w w--italic">eller</span><br />
+                <span class="w w--hl">KI?</span>
+              </h1>
+
+              <p class="hero__lede">
+                KI lager falske nyheter, deepfakes og ferdige skoleoppgaver på
+                sekunder. <b>Klarer du å se forskjell?</b>
+              </p>
+
+              <div class="hero__actions">
+                <a href="#episode" class="btn btn--pink">▶ Hør episoden</a>
+                <a href="#quiz" class="btn">Test deg selv →</a>
+              </div>
+            </div>
+
+            <div class="hero__visual" aria-hidden="true">
+              <span class="sticker sticker--1">ekte?</span>
+              <span class="sticker sticker--2">eller KI?</span>
+              <div class="polaroid">
+                <div class="polaroid__photo">
+                  <img
+                    src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600&h=600&fit=crop&crop=faces&auto=format&q=80"
+                    alt=""
+                    loading="eager"
+                    onerror="this.style.display = 'none'"
+                  />
+                </div>
+                <p class="polaroid__caption">ekte eller KI?</p>
+              </div>
+              <span class="sticker sticker--3">sjekk kilden!</span>
+            </div>
+          </div>
+
+          <div class="hero__bottom">
+            <div class="hero__stats">
+              <div class="stat">
+                <b>01</b>
+                episode om KI i hverdagen
+              </div>
+              <div class="stat">
+                <b>05</b>
+                deltakere i samtalen
+              </div>
+              <div class="stat">
+                <b>12 min</b>
+                om skole, nett og jobb
+              </div>
+            </div>
+
+            <p class="hero__byline">
+              <strong>Emilia</strong> · programleder<br />
+              Viktoriia · Alisa · Polina · Zhanna<br />
+              Katta, 2026
             </p>
-            <div class="hero__cta">
-              <a href="#episode" class="knapp">Hør episoden</a>
-              <a href="#quiz" class="knapp knapp--rolig">Ta quizen</a>
-            </div>
-          </div>
-
-          <!-- HERO-BILDE: legg hero.jpg i samme mappe -->
-          <div class="hero__bilde plass-bilde">
-            <img
-              src="hero.jpg"
-              alt="Illustrasjon av KI og digitale medier"
-              onerror="
-                this.style.display = 'none';
-                this.parentElement.classList.add('tom');
-              "
-            />
-            <span class="plass-tekst">Sett inn hero.jpg her</span>
           </div>
         </div>
       </section>
 
-      <div class="ticker">
-        <div class="ticker__spor">
-          <span
-            >KI på skolen · deepfakes · sosiale medier · kildekritikk · stopp,
-            tenk, sjekk ·</span
-          >
-          <span
-            >KI på skolen · deepfakes · sosiale medier · kildekritikk · stopp,
-            tenk, sjekk ·</span
-          >
-        </div>
-      </div>
+      <!-- EPISODE -->
+      <section class="episode pad" id="episode">
+        <div class="inner">
+          <span class="eyebrow">01 — episoden</span>
+          <div class="episode__top">
+            <h2 class="h2 reveal">
+              Hva skjer når <em>alle</em> får sin egen KI-assistent?
+            </h2>
+            <div class="episode__body reveal">
+              <p>
+                I første episode av KI-Ishiki tar vi den ubehagelige samtalen:
+                Hva gjør KI faktisk med oss? Ikke i teorien — men i
+                klasserommet, i feeden på TikTok og i jobbannonsene vi drømmer
+                om.
+              </p>
+              <p>
+                Deltakerne er langt fra enige. <strong>Viktoriia</strong> tror
+                vi kommer til å bli lurt. <strong>Alisa</strong> mener vi
+                allerede lærer mindre. <strong>Polina</strong> og
+                <strong>Zhanna</strong>
+                synes KI er det beste som har skjedd skolen på ti år.
+              </p>
+              <p>
+                Ingen pekefingre. Ingen dommedag. Bare fem ungdommer som prøver
+                å finne ut av noe de voksne fortsatt krangler om.
+              </p>
+            </div>
+          </div>
 
-      <section id="fakta" class="seksjon">
-        <div class="container">
-          <h2>Fakta og statistikk</h2>
-          <p class="seksjon__ingress">Tall fra Udir, Medietilsynet og OECD.</p>
-          <div class="fakta">
-            <div class="fakta__kort">
-              <strong>89 %</strong>
-              <p>av skoleledere på ungdomsskolen sier elevene bruker KI.</p>
-              <span>Spørsmål til Skole-Norge 2025</span>
+          <div class="reveal">
+            <div class="player" aria-label="Informasjon om episode 01">
+              <div class="player__play" aria-hidden="true">01</div>
+              <div>
+                <span class="player__label">episode 01</span>
+                <p class="player__title">Ekte eller KI?</p>
+                <p class="player__sub">Paneldiskusjon · ca. 12 min · norsk</p>
+                <p class="player__sub">
+                  Legg til lydfil her når opptaket er klart.
+                </p>
+              </div>
             </div>
-            <div class="fakta__kort">
-              <strong>65 %</strong>
-              <p>av skoleledere på barneskolen melder om KI-bruk.</p>
-              <span>Spørsmål til Skole-Norge 2025</span>
-            </div>
-            <div class="fakta__kort">
-              <strong>−6,6 %</strong>
-              <p>sysselsetting blant unge 21–30 år i KI-utsatte yrker.</p>
-              <span>KI-indeksen / OECD</span>
-            </div>
-            <div class="fakta__kort">
-              <strong>1,5 %</strong>
-              <p>vekst i total sysselsetting i privat sektor etter ChatGPT.</p>
-              <span>KI-indeksen</span>
-            </div>
+            <p class="episode__note">
+              ↳ bytt ut spilleren med en YouTube-iframe (VIDEO_ID)
+            </p>
+          </div>
+
+          <div class="episode__facts reveal" style="margin-top: 32px">
+            <span class="fact"><b>Format:</b> Paneldiskusjon</span>
+            <span class="fact"><b>Tema:</b> KI &amp; ungdom</span>
+            <span class="fact"><b>Lengde:</b> ~12 min</span>
+            <span class="fact"><b>Språk:</b> Norsk</span>
           </div>
         </div>
       </section>
 
-      <section id="episode" class="seksjon seksjon--mørk">
-        <div class="container">
-          <h2>Podkastepisoden</h2>
-          <p class="seksjon__ingress">
-            Episode 01 · «Ekte eller KI?» · ca. 12 minutter
-          </p>
-
-          <!-- YOUTUBE: bytt ut VIDEO_ID med din egen YouTube-ID.
-         Eksempel: hvis lenken er https://youtu.be/abc123XY
-         skriver du: src="https://www.youtube.com/embed/abc123XY" -->
-          <div class="episode">
-            <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID"
-              title="Ekte eller KI? — KI-Ishiki Podcast"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-              "
-              allowfullscreen
-            ></iframe>
+      <!-- CAST -->
+      <section class="cast pad" id="cast">
+        <div class="inner">
+          <span class="eyebrow">02 — deltakere</span>
+          <div class="cast__header">
+            <h2 class="h2 reveal">Fem stemmer. <em>Fem</em> meninger.</h2>
+            <p class="lede reveal">
+              Ingen av dem er enige. Her er det de faktisk mener — rett fra
+              episoden.
+            </p>
           </div>
-          <p class="episode__note">
-            ↳ Bytt ut <code>VIDEO_ID</code> i koden med YouTube-ID-en til
-            episoden.
-          </p>
-        </div>
-      </section>
 
-      <section id="deltakere" class="seksjon">
-        <div class="container">
-          <h2>Deltakere</h2>
-          <div class="deltakere">
-            <!-- BILDE: legg emilia.jpg i samme mappe -->
-            <div class="deltaker">
-              <div class="deltaker__bilde plass-bilde">
+          <div class="cast__grid">
+            <article class="cast__card reveal" data-person="emilia">
+              <div class="cast__avatar">
                 <img
-                  src="emilia.jpg"
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
                   alt="Emilia"
-                  onerror="
-                    this.style.display = 'none';
-                    this.parentElement.classList.add('tom');
-                  "
+                  loading="lazy"
+                  onerror="this.style.display = 'none'"
                 />
-                <span class="plass-tekst">emilia.jpg</span>
               </div>
-              <h3>Emilia</h3>
-              <p>Programleder</p>
-            </div>
+              <h3 class="cast__name">Emilia</h3>
+              <p class="cast__role">Programleder</p>
+              <p class="cast__bio">
+                Stiller spørsmålene ingen andre tør å stille. Sier «vent litt»
+                når alle er enige.
+              </p>
+              <p class="cast__quote">
+                Hvorfor er vi mer redd for KI enn for Google?
+              </p>
+            </article>
 
-            <div class="deltaker">
-              <div class="deltaker__bilde plass-bilde">
+            <article class="cast__card reveal" data-person="viktoriia">
+              <div class="cast__avatar">
                 <img
-                  src="viktoriia.jpg"
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
                   alt="Viktoriia"
-                  onerror="
-                    this.style.display = 'none';
-                    this.parentElement.classList.add('tom');
-                  "
+                  loading="lazy"
+                  onerror="this.style.display = 'none'"
                 />
-                <span class="plass-tekst">viktoriia.jpg</span>
               </div>
-              <h3>Viktoriia</h3>
-              <p>Skeptiker</p>
-            </div>
+              <h3 class="cast__name">Viktoriia</h3>
+              <p class="cast__role">Skeptiker</p>
+              <p class="cast__bio">
+                Mener vi bruker KI til ting vi ikke burde. Redd for svindel og
+                falske videoer.
+              </p>
+              <p class="cast__quote">
+                Det kan være vanskelig å se hva som er ekte på nettet.
+              </p>
+            </article>
 
-            <div class="deltaker">
-              <div class="deltaker__bilde plass-bilde">
+            <article class="cast__card reveal" data-person="alisa">
+              <div class="cast__avatar">
                 <img
-                  src="alisa.jpg"
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
                   alt="Alisa"
-                  onerror="
-                    this.style.display = 'none';
-                    this.parentElement.classList.add('tom');
-                  "
+                  loading="lazy"
+                  onerror="this.style.display = 'none'"
                 />
-                <span class="plass-tekst">alisa.jpg</span>
               </div>
-              <h3>Alisa</h3>
-              <p>Bekymret</p>
-            </div>
+              <h3 class="cast__name">Alisa</h3>
+              <p class="cast__role">Bekymret</p>
+              <p class="cast__bio">
+                Redd for deepfakes, juks og at hjernen vår går på autopilot.
+              </p>
+              <p class="cast__quote">
+                Det er lett å kopiere et svar uten å lære så mye.
+              </p>
+            </article>
 
-            <div class="deltaker">
-              <div class="deltaker__bilde plass-bilde">
+            <article class="cast__card reveal" data-person="polina">
+              <div class="cast__avatar">
                 <img
-                  src="polina.jpg"
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
                   alt="Polina"
-                  onerror="
-                    this.style.display = 'none';
-                    this.parentElement.classList.add('tom');
-                  "
+                  loading="lazy"
+                  onerror="this.style.display = 'none'"
                 />
-                <span class="plass-tekst">polina.jpg</span>
               </div>
-              <h3>Polina</h3>
-              <p>Positiv</p>
-            </div>
+              <h3 class="cast__name">Polina</h3>
+              <p class="cast__role">Optimist</p>
+              <p class="cast__bio">
+                Ser hva KI kan gjøre som ingen lærer rekker: forklare, forklare,
+                forklare.
+              </p>
+              <p class="cast__quote">
+                KI hjalp meg med matteleksen, men jeg må fortsatt forstå svaret.
+              </p>
+            </article>
 
-            <div class="deltaker">
-              <div class="deltaker__bilde plass-bilde">
+            <article class="cast__card reveal" data-person="zhanna">
+              <div class="cast__avatar">
                 <img
-                  src="zhanna.jpg"
+                  src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
                   alt="Zhanna"
-                  onerror="
-                    this.style.display = 'none';
-                    this.parentElement.classList.add('tom');
-                  "
+                  loading="lazy"
+                  onerror="this.style.display = 'none'"
                 />
-                <span class="plass-tekst">zhanna.jpg</span>
               </div>
-              <h3>Zhanna</h3>
-              <p>Entusiast</p>
-            </div>
+              <h3 class="cast__name">Zhanna</h3>
+              <p class="cast__role">Entusiast</p>
+              <p class="cast__bio">
+                Sier det ingen tør: KI er bedre å spørre enn å rekke opp hånda.
+              </p>
+              <p class="cast__quote">
+                Bedre å spørre KI enn en lærer som sukker.
+              </p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="quiz" class="seksjon seksjon--mørk">
-        <div class="container">
-          <h2>Test deg selv</h2>
-          <p class="seksjon__ingress">6 spørsmål om KI fra episoden.</p>
+      <!-- THEMES -->
+      <section class="themes pad" id="temaer">
+        <div class="inner">
+          <span class="eyebrow">03 — temaer</span>
+          <div class="themes__header">
+            <h2 class="h2 reveal">
+              Tre steder KI <em>allerede</em> har forandret hverdagen din.
+            </h2>
+            <p class="lede reveal">
+              Skolen, feeden og jobben. Det er her det skjer — enten du vil
+              eller ikke.
+            </p>
+          </div>
 
-          <div class="quiz">
-            <div id="quizStart" class="quiz__start">
-              <p>Klar?</p>
-              <button id="startKnapp" class="knapp">Start quizen</button>
-            </div>
-
-            <div id="quizBoks" class="quiz__boks skjult">
-              <div class="quiz__topp">
-                <span id="sporsmalTeller">1 / 6</span>
-                <span id="poengTeller">0 poeng</span>
+          <div class="themes__grid">
+            <article class="theme reveal">
+              <div class="theme__icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                >
+                  <path d="M10 12h20c3 0 5 2 5 5v36c-2-2-5-3-7-3H10V12z" />
+                  <path d="M54 12H34c-3 0-5 2-5 5v36c2-2 5-3 7-3h18V12z" />
+                </svg>
               </div>
-              <div class="quiz__bar"><div id="quizBarFyll"></div></div>
-              <h3 id="sporsmalTekst" class="quiz__spm"></h3>
-              <div id="svarBoks" class="quiz__svar"></div>
-              <p id="feedback" class="quiz__feedback"></p>
-              <button id="nesteKnapp" class="knapp" disabled>Neste</button>
+              <h3 class="theme__title">KI og læring på skolen</h3>
+              <p class="theme__body">
+                KI kan forklare vanskelige temaer på en enklere måte. Men hva
+                skjer hvis du kopierer svaret uten å skjønne det? Hjernen lærer
+                ingenting av å trykke «enter».
+              </p>
+              <p class="theme__quote">
+                «Bruken av KI er mest vanlig fra 5. trinn og oppover.»
+                <cite>Spørsmål til Skole-Norge 2025</cite>
+              </p>
+            </article>
+
+            <article class="theme reveal">
+              <div class="theme__icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                >
+                  <rect x="18" y="6" width="28" height="52" rx="6" />
+                  <circle
+                    cx="32"
+                    cy="48"
+                    r="2"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                  <path d="M26 30c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+                </svg>
+              </div>
+              <h3 class="theme__title">KI og sosiale medier</h3>
+              <p class="theme__body">
+                KI kan lage bilder, videoer og stemmer som ser helt ekte ut. Det
+                brukes kreativt — men også til å spre løgner fortere enn noen
+                rekker å sjekke.
+              </p>
+              <p class="theme__quote">
+                «Tenk kritisk før du tror på — eller deler — noe du ser på
+                nettet.»
+              </p>
+            </article>
+
+            <article class="theme reveal">
+              <div class="theme__icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                >
+                  <rect x="8" y="20" width="48" height="34" rx="3" />
+                  <path d="M24 20v-6c0-2 2-4 4-4h8c2 0 4 2 4 4v6" />
+                  <path d="M8 32h48" />
+                </svg>
+              </div>
+              <h3 class="theme__title">Kan KI ta jobbene våre?</h3>
+              <p class="theme__body">
+                KI gjør noen oppgaver raskere. Blant unge i AI-utsatte yrker har
+                sysselsettingen sunket — samtidig som det dukker opp jobber
+                ingen hadde sett for seg.
+              </p>
+              <p class="theme__quote">
+                «Nye jobber oppstår — men mennesker må lære nye ferdigheter.»
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- MYTH -->
+      <section class="myth pad" id="myte">
+        <div class="inner">
+          <span class="eyebrow">04 — myte eller fakta?</span>
+          <div class="myth__header">
+            <h2 class="h2 reveal">Fire ting folk <em>tror</em> om KI.</h2>
+            <p class="lede reveal">
+              Trykk på et kort for å se om det stemmer. Ingen poengsum, ingen
+              tidspress.
+            </p>
+          </div>
+
+          <div class="myth__grid">
+            <div
+              class="myth__card reveal"
+              tabindex="0"
+              role="button"
+              aria-label="Vend kortet: KI er alltid objektiv"
+            >
+              <div class="myth__inner-card">
+                <div class="myth__face myth__front">
+                  <span class="myth__label">Myte</span>
+                  <p class="myth__text">
+                    «KI er alltid objektiv. Den har ingen meninger.»
+                  </p>
+                </div>
+                <div class="myth__face myth__back">
+                  <span class="myth__label">Fakta</span>
+                  <p class="myth__text">
+                    KI gjentar skjevhetene i dataene den er trent på. Den er
+                    ikke nøytral — den er formet av dem som lagde den.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div id="quizResultat" class="quiz__resultat skjult"></div>
+            <div
+              class="myth__card reveal"
+              tabindex="0"
+              role="button"
+              aria-label="Vend kortet: Du kan se forskjell på ekte og AI-video"
+            >
+              <div class="myth__inner-card">
+                <div class="myth__face myth__front">
+                  <span class="myth__label">Myte</span>
+                  <p class="myth__text">
+                    «Du ser forskjell på en ekte og en AI-laget video.»
+                  </p>
+                </div>
+                <div class="myth__face myth__back">
+                  <span class="myth__label">Fakta</span>
+                  <p class="myth__text">
+                    Deepfakes er laget for å lure deg. Ofte er det umulig å se
+                    forskjell uten hjelp fra verktøy.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="myth__card reveal"
+              tabindex="0"
+              role="button"
+              aria-label="Vend kortet: KI tar alle jobbene"
+            >
+              <div class="myth__inner-card">
+                <div class="myth__face myth__front">
+                  <span class="myth__label">Myte</span>
+                  <p class="myth__text">
+                    «KI kommer til å ta alle jobbene våre.»
+                  </p>
+                </div>
+                <div class="myth__face myth__back">
+                  <span class="myth__label">Fakta</span>
+                  <p class="myth__text">
+                    KI tar oppgaver, ikke hele yrker. Men noen jobber blir borte
+                    — og nye dukker opp. Du må bare lære noe nytt.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="myth__card reveal"
+              tabindex="0"
+              role="button"
+              aria-label="Vend kortet: Å bruke KI er juks"
+            >
+              <div class="myth__inner-card">
+                <div class="myth__face myth__front">
+                  <span class="myth__label">Myte</span>
+                  <p class="myth__text">
+                    «Å bruke KI på skolen er alltid juks.»
+                  </p>
+                </div>
+                <div class="myth__face myth__back">
+                  <span class="myth__label">Fakta</span>
+                  <p class="myth__text">
+                    Å bruke KI som verktøy er helt greit. Å la den gjøre jobben
+                    for deg — og late som du gjorde det selv — er det ikke.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="kilder" class="seksjon">
-        <div class="container">
-          <h2>Kilder</h2>
-          <p class="seksjon__ingress">
-            Ressursene vi brukte i research og manus.
-          </p>
-          <div class="kilder">
-            <a href="https://www.udir.no/" target="_blank" rel="noopener">
-              Utdanningsdirektoratet — Spørsmål til Skole-Norge 2025
-            </a>
-            <a
-              href="https://www.medietilsynet.no/"
-              target="_blank"
-              rel="noopener"
-            >
-              Medietilsynet — Barn og medier
-            </a>
-            <a href="https://www.oecd.org/" target="_blank" rel="noopener">
-              OECD — forskning om unge og KI
-            </a>
-            <a
-              href="https://www.datatilsynet.no/"
-              target="_blank"
-              rel="noopener"
-            >
-              Datatilsynet — personvern og rettigheter på nett
-            </a>
+      <!-- RULES -->
+      <section class="rules pad" id="regler">
+        <div class="inner">
+          <span class="eyebrow">05 — overlevelsesguide</span>
+          <div class="rules__header">
+            <h2 class="h2 reveal">Stopp. Tenk. <em>Sjekk.</em></h2>
+            <p class="lede reveal">
+              Fem vaner som tar deg lenger enn alle KI-verktøy til sammen.
+            </p>
+          </div>
+
+          <ol class="rules__list">
+            <li class="rule reveal">
+              <span class="rule__num">01</span>
+              <div>
+                <h3 class="rule__title">Prøv selv først</h3>
+                <p class="rule__text">
+                  Tenk gjennom oppgaven før du spør KI. Det du klarer selv,
+                  husker du faktisk neste gang.
+                </p>
+              </div>
+            </li>
+            <li class="rule reveal">
+              <span class="rule__num">02</span>
+              <div>
+                <h3 class="rule__title">Sjekk med en annen kilde</h3>
+                <p class="rule__text">
+                  KI er selvsikker — også når den tar feil. Sammenlign med minst
+                  én annen kilde før du bruker svaret.
+                </p>
+              </div>
+            </li>
+            <li class="rule reveal">
+              <span class="rule__num">03</span>
+              <div>
+                <h3 class="rule__title">Hvem står bak?</h3>
+                <p class="rule__text">
+                  Se hvem som har publisert bildet, videoen eller teksten.
+                  Finnes personen egentlig? Stemmer datoen?
+                </p>
+              </div>
+            </li>
+            <li class="rule reveal">
+              <span class="rule__num">04</span>
+              <div>
+                <h3 class="rule__title">Ikke del med en gang</h3>
+                <p class="rule__text">
+                  Er det for sjokkerende? For perfekt? Da er det ofte nettopp
+                  det. Vent ti sekunder før du trykker «del».
+                </p>
+              </div>
+            </li>
+            <li class="rule reveal">
+              <span class="rule__num">05</span>
+              <div>
+                <h3 class="rule__title">Bruk KI — men tenk selv</h3>
+                <p class="rule__text">
+                  KI er et verktøy, ikke en fasit. Ansvaret for det du leverer,
+                  er alltid ditt.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section class="quiz pad" id="quiz">
+        <div class="inner">
+          <span class="eyebrow">06 — test deg selv</span>
+          <div class="themes__header">
+            <h2 class="h2 reveal">Tør du å bli <em>testet?</em></h2>
+            <p class="lede reveal">
+              Seks spørsmål fra episoden. Får du full pott, får du konfetti. Får
+              du lavt, får du en grunn til å høre episoden en gang til.
+            </p>
+          </div>
+
+          <div class="quiz__panel reveal">
+            <div id="quizIntro" class="quiz__intro">
+              <div class="quiz__intro-meta">
+                <span>06</span> spørsmål · ca. <span>2</span> minutter ·<br />
+                <span>ingen</span> tidspress
+              </div>
+              <button id="startBtn" class="btn btn--pink" type="button">
+                Start quizen →
+              </button>
+            </div>
+
+            <div id="quizGame" class="quiz__game">
+              <div class="quiz__progress">
+                <span class="quiz__count" id="quizCount">01 / 06</span>
+                <div class="quiz__bar">
+                  <div class="quiz__bar-fill" id="quizBarFill"></div>
+                </div>
+              </div>
+              <h3 class="quiz__question" id="quizQuestion"></h3>
+              <div class="quiz__answers" id="quizAnswers"></div>
+              <p
+                class="quiz__feedback"
+                id="quizFeedback"
+                aria-live="polite"
+              ></p>
+              <button
+                id="nextBtn"
+                class="btn btn--ink quiz__next"
+                type="button"
+                disabled
+              >
+                Neste →
+              </button>
+            </div>
+
+            <div id="quizResult" class="quiz__result"></div>
           </div>
         </div>
       </section>
 
-      <section class="avslutning">
-        <div class="container">
-          <h2>Tenk kritisk. Sjekk kilden.</h2>
-          <p>KI-Ishiki Podcast · 2026</p>
+      <!-- CTA -->
+      <section class="cta">
+        <div class="inner cta__inner">
+          <h2 class="cta__statement reveal">
+            Tenk kritisk.<br />
+            Sjekk kilden.<br />
+            <em>Bruk KI med vett.</em>
+          </h2>
+          <div class="cta__meta reveal">
+            <p>KI-Ishiki Podcast · produsert av elever ved Katta · 2026</p>
+            <div class="cta__actions">
+              <a href="#episode" class="btn btn--ink">Hør episoden</a>
+              <a href="#quiz" class="btn">Ta quizen på nytt</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-      <div class="container">
-        <p>© 2026 KI-Ishiki Podcast</p>
-        <p>Emilia · Viktoriia · Alisa · Polina · Zhanna</p>
+      <div class="footer__inner">
+        <div class="footer__col">
+          <div class="footer__brand">
+            <span class="nav__mark">KI</span>
+            <span class="nav__name">Ishiki</span>
+          </div>
+          <p>
+            Ekte eller KI? En podkast om kunstig intelligens og ungdom — laget
+            av elever, for elever.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h3>Sider</h3>
+          <ul>
+            <li><a href="#episode">Episoden</a></li>
+            <li><a href="#cast">Deltakere</a></li>
+            <li><a href="#temaer">Temaer</a></li>
+            <li><a href="#myte">Myte / Fakta</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Teamet</h3>
+          <ul>
+            <li>Emilia</li>
+            <li>Viktoriia</li>
+            <li>Alisa</li>
+            <li>Polina</li>
+            <li>Zhanna</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Prinsipp</h3>
+          <p>
+            Ingen sporing. Ingen cookies. All data behandles lokalt i
+            nettleseren din.
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 KI-Ishiki Podcast · Katta</p>
+        <p>Laget som skoleprosjekt · 2026</p>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
