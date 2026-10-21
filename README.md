@@ -1,42 +1,40 @@
-# Refleksjon — KI-Ishiki Podcast
+# KI-Ishiki Podcast — Ekte eller KI?
 
-## Innledning
+**Gruppe:** Emilia, Viktoriia, Alisa, Polina og Zhanna
 
-I gruppa er vi tre programmerere, og hver av oss lager sin egen nettside. Jeg hadde ansvar for min egen — fra start til slutt. Nettsiden formidler temaet KI til ungdom: fakta, statistikk, podkastepisoden, quiz og visuell stil.
+## Om prosjektet
 
-## Hva jeg gjorde
+Vi har laget en nettside til podkasten vår «Ekte eller KI?». Vi snakker om kunstig intelligens og hvordan KI påvirker ungdom, skolen, sosiale medier og jobbene i fremtiden.
 
-- Planla strukturen: hjem, fakta, episode, deltakere, temaer, quiz, kilder.
-- Valgte visuell stil: vinrød og svart palett, fontene Space Grotesk og JetBrains Mono.
-- Skrev HTML, CSS og JavaScript for hele nettsiden.
-- Laget responsivt design for PC, nettbrett og mobil.
-- Samlet statistikk fra Udir, Medietilsynet og OECD og satte det inn i kort.
-- Laget en quiz med 6 spørsmål og poengsystem.
-- Sjekket alle lenker manuelt og testet siden i Chrome DevTools.
+Målet er å få folk til å tenke litt mer kritisk på det de ser på nettet, og ikke tro på alt med en gang.
 
-## Utfordringer
+## Hva har vi laget?
 
-- Gjøre siden kort, men med fullt innhold — kuttet ned til seks blokker.
-- Quizen fungerte først med feil — testet hvert spørsmål for seg.
-- Mobilversjonen — brukte media queries.
+Nettsiden inneholder:
 
-## Om KI
+- Informasjon om KI
+- Fakta og statistikk med kilder
+- Podkastepisoden vår
+- Seks spørsmål i en tekstquiz
+- En bildequiz med fire bilder
+- Myte- og faktakort som kan snus
+- Kilder og informasjon om prosjektet
 
-Jeg prøvde GitHub Copilot litt for å se hvordan autofullføring fungerer. Alt jeg tok derfra, skrev jeg om til mitt eget.
+Statistikken er hentet fra _Spørsmål til Skole-Norge 2025_ og _KI-indeksen_. Vi har brukt informasjon fra [regjeringen.no](https://www.regjeringen.no/) og [kiindeksen.no](https://kiindeksen.no/).
 
-Jeg brukte også KI til å lage den animerte delen helt i starten av siden — de flyvende boblene «Ekte?» og «KI?», og ticker-baren i nyhetsstil som beveger seg nedover siden. Koden derfra tilpasset jeg også til min egen stil og sjekket at alt fungerte som det skulle.
+Vi har testet nettsiden på både mobil og PC, og sjekket at lenkene fungerer.
 
-Alt annet — tekster, design, research, tester — gjorde jeg selv.
+## Bruk av KI
 
-![ KI ](image.png)
+Vi har brukt KI som hjelp underveis, men det meste av arbeidet er vårt eget.
 
-## Hva jeg ville gjort annerledes
+- **ChatGPT:** Hjalp med research, struktur og noen tekstutkast.
+- **Claude:** Ble brukt til korrektur og til å sammenligne manuset med nettsideteksten.
+- **Canva AI:** Hjalp med ideer til design og grafikk.
+- **Koding:** Vi skrev mesteparten av koden selv. KI ble hovedsakelig brukt til å finne og fikse feil i koden og hjelpe oss når noe ikke fungerte.
 
-- Testet på mobil fra første dag.
-- Laget en plan med tydelige delmål underveis.
+Manuset, meningene og argumentene er våre egne. Alle deltakerne har sine egne meninger om KI. Sitater på nettsiden er hentet fra podkasten.
 
-## Oppsummering
+## Målet vårt
 
-Jeg har lært å bygge en nettside fra bunnen av, og forstått at design og tekst må jobbe sammen. Det viktigste er å forstå koden man skriver.
-
-**Publisering:** nettsiden skulle publiseres på skolens portal, men den fungerer ikke der på grunn av tekniske problemer med tjenesten. Filene er klare og fungerer lokalt.
+Vi ville lage en nettside som er interessant for ungdom, med et enkelt design og interaktive ting man kan prøve selv. Vi håper at folk lærer noe nytt og blir flinkere til å skille mellom ekte innhold og KI-generert innhold.

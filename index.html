@@ -12,12 +12,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://www.youtube-nocookie.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Outfit:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
@@ -34,9 +34,11 @@
           <a href="#episode">Episoden</a>
           <a href="#cast">Deltakere</a>
           <a href="#temaer">Temaer</a>
-          <a href="#myte">Myte / Fakta</a>
+          <a href="#statistikk">Tall</a>
+          <a href="#myte">Fakta</a>
           <a href="#regler">Regler</a>
           <a href="#quiz">Quiz</a>
+          <a href="#bildequiz">Bildequiz</a>
         </nav>
         <a href="#episode" class="nav__cta">▶ Hør nå</a>
         <button
@@ -58,7 +60,7 @@
             <div class="hero__content">
               <div class="hero__tags">
                 <span class="tag">Podkast</span>
-                <span class="tag">12 min</span>
+                <span class="tag">14 min</span>
                 <span class="tag">For ungdom</span>
               </div>
 
@@ -85,10 +87,10 @@
               <div class="polaroid">
                 <div class="polaroid__photo">
                   <img
-                    src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600&h=600&fit=crop&crop=faces&auto=format&q=80"
-                    alt=""
+                    class="polaroid__img"
+                    src="klishki.jpg"
+                    alt="Ekte eller KI?"
                     loading="eager"
-                    onerror="this.style.display = 'none'"
                   />
                 </div>
                 <p class="polaroid__caption">ekte eller KI?</p>
@@ -108,7 +110,7 @@
                 deltakere i samtalen
               </div>
               <div class="stat">
-                <b>12 min</b>
+                <b>14 min</b>
                 om skole, nett og jobb
               </div>
             </div>
@@ -142,7 +144,7 @@
                 vi kommer til å bli lurt. <strong>Alisa</strong> mener vi
                 allerede lærer mindre. <strong>Polina</strong> og
                 <strong>Zhanna</strong>
-                synes KI er det beste som har skjedd skolen på ti år.
+                mener KI kan gjøre skolen bedre — hvis den brukes riktig.
               </p>
               <p>
                 Ingen pekefingre. Ingen dommedag. Bare fem ungdommer som prøver
@@ -152,26 +154,33 @@
           </div>
 
           <div class="reveal">
-            <div class="player" aria-label="Informasjon om episode 01">
-              <div class="player__play" aria-hidden="true">01</div>
-              <div>
-                <span class="player__label">episode 01</span>
-                <p class="player__title">Ekte eller KI?</p>
-                <p class="player__sub">Paneldiskusjon · ca. 12 min · norsk</p>
-                <p class="player__sub">
-                  Legg til lydfil her når opptaket er klart.
-                </p>
-              </div>
+            <div
+              class="player player--video"
+              aria-label="Episode 01: Ekte eller KI?"
+            >
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/83Qy6ajUses"
+                title="KI-Ishiki Podcast – Ekte eller KI?"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
             </div>
-            <p class="episode__note">
-              ↳ bytt ut spilleren med en YouTube-iframe (VIDEO_ID)
-            </p>
           </div>
 
           <div class="episode__facts reveal" style="margin-top: 32px">
             <span class="fact"><b>Format:</b> Paneldiskusjon</span>
             <span class="fact"><b>Tema:</b> KI &amp; ungdom</span>
-            <span class="fact"><b>Lengde:</b> ~12 min</span>
+            <span class="fact"><b>Lengde:</b> ~14 min</span>
             <span class="fact"><b>Språk:</b> Norsk</span>
           </div>
         </div>
@@ -184,20 +193,15 @@
           <div class="cast__header">
             <h2 class="h2 reveal">Fem stemmer. <em>Fem</em> meninger.</h2>
             <p class="lede reveal">
-              Ingen av dem er enige. Her er det de faktisk mener — rett fra
-              episoden.
+              Ingen av dem er enige. Her er hovedpoengene deres — slik de sier
+              det i episoden.
             </p>
           </div>
 
           <div class="cast__grid">
             <article class="cast__card reveal" data-person="emilia">
-              <div class="cast__avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
-                  alt="Emilia"
-                  loading="lazy"
-                  onerror="this.style.display = 'none'"
-                />
+              <div class="cast__avatar" aria-hidden="true">
+                <span class="cast__avatar-emoji">🎤</span>
               </div>
               <h3 class="cast__name">Emilia</h3>
               <p class="cast__role">Programleder</p>
@@ -205,19 +209,12 @@
                 Stiller spørsmålene ingen andre tør å stille. Sier «vent litt»
                 når alle er enige.
               </p>
-              <p class="cast__quote">
-                Hvorfor er vi mer redd for KI enn for Google?
-              </p>
+              <p class="cast__quote">Hva gjør du hvis KI gir deg feil svar?</p>
             </article>
 
             <article class="cast__card reveal" data-person="viktoriia">
-              <div class="cast__avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
-                  alt="Viktoriia"
-                  loading="lazy"
-                  onerror="this.style.display = 'none'"
-                />
+              <div class="cast__avatar" aria-hidden="true">
+                <span class="cast__avatar-emoji">🤔</span>
               </div>
               <h3 class="cast__name">Viktoriia</h3>
               <p class="cast__role">Skeptiker</p>
@@ -226,18 +223,13 @@
                 falske videoer.
               </p>
               <p class="cast__quote">
-                Det kan være vanskelig å se hva som er ekte på nettet.
+                Det blir stadig vanskeligere å vite hva man skal stole på.
               </p>
             </article>
 
             <article class="cast__card reveal" data-person="alisa">
-              <div class="cast__avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
-                  alt="Alisa"
-                  loading="lazy"
-                  onerror="this.style.display = 'none'"
-                />
+              <div class="cast__avatar" aria-hidden="true">
+                <span class="cast__avatar-emoji">😟</span>
               </div>
               <h3 class="cast__name">Alisa</h3>
               <p class="cast__role">Bekymret</p>
@@ -245,18 +237,13 @@
                 Redd for deepfakes, juks og at hjernen vår går på autopilot.
               </p>
               <p class="cast__quote">
-                Det er lett å kopiere et svar uten å lære så mye.
+                Mange kopierer svaret og gir det til læreren uten å sjekke noe.
               </p>
             </article>
 
             <article class="cast__card reveal" data-person="polina">
-              <div class="cast__avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
-                  alt="Polina"
-                  loading="lazy"
-                  onerror="this.style.display = 'none'"
-                />
+              <div class="cast__avatar" aria-hidden="true">
+                <span class="cast__avatar-emoji">😊</span>
               </div>
               <h3 class="cast__name">Polina</h3>
               <p class="cast__role">Optimist</p>
@@ -265,26 +252,24 @@
                 forklare.
               </p>
               <p class="cast__quote">
-                KI hjalp meg med matteleksen, men jeg må fortsatt forstå svaret.
+                Hvis jeg ikke forstår noe i matematikk, kan KI forklare det
+                lettere.
               </p>
             </article>
 
             <article class="cast__card reveal" data-person="zhanna">
-              <div class="cast__avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
-                  alt="Zhanna"
-                  loading="lazy"
-                  onerror="this.style.display = 'none'"
-                />
+              <div class="cast__avatar" aria-hidden="true">
+                <span class="cast__avatar-emoji">🤩</span>
               </div>
               <h3 class="cast__name">Zhanna</h3>
               <p class="cast__role">Entusiast</p>
               <p class="cast__bio">
-                Sier det ingen tør: KI er bedre å spørre enn å rekke opp hånda.
+                Synes KI gjør det tryggere å stille spørsmål — uten å frykte at
+                noen ler.
               </p>
               <p class="cast__quote">
-                Bedre å spørre KI enn en lærer som sukker.
+                Det er flott at man kan stille spørsmål flere ganger uten frykt
+                for å virke dum.
               </p>
             </article>
           </div>
@@ -394,10 +379,129 @@
         </div>
       </section>
 
+      <!-- STATISTICS -->
+      <section class="stats pad" id="statistikk">
+        <div class="inner">
+          <span class="eyebrow">04 — KI i tall</span>
+          <div class="stats__header">
+            <h2 class="h2 reveal">KI setter spor i <em>skole og jobb.</em></h2>
+            <p class="lede reveal">
+              To enkle diagrammer viser tallene som omtales i episoden.
+            </p>
+          </div>
+
+          <div class="stats__grid">
+            <article class="stats__card reveal">
+              <div class="stats__card-heading">
+                <div>
+                  <span class="stats__tag">SKOLE</span>
+                  <h3>Elever bruker KI</h3>
+                </div>
+                <span class="stats__main-value">89 %</span>
+              </div>
+              <p class="stats__description">
+                Andel skoleledere som svarer at elevene bruker KI.
+              </p>
+
+              <div
+                class="stats__bars"
+                role="img"
+                aria-label="65 prosent av skolelederne i barneskolen og 89 prosent i ungdomsskolen svarer at elevene bruker KI."
+              >
+                <div class="stats__bar-row">
+                  <div class="stats__bar-label">
+                    <span>Barneskole</span><strong>65 %</strong>
+                  </div>
+                  <div class="stats__track">
+                    <div class="stats__bar" style="width: 65%"></div>
+                  </div>
+                </div>
+                <div class="stats__bar-row">
+                  <div class="stats__bar-label">
+                    <span>Ungdomsskole</span><strong>89 %</strong>
+                  </div>
+                  <div class="stats__track">
+                    <div
+                      class="stats__bar stats__bar--pink"
+                      style="width: 89%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="stats__scale">
+                  <span>0 %</span><span>100 %</span>
+                </div>
+              </div>
+              <p class="stats__source">
+                Kilde:
+                <a
+                  href="https://www.regjeringen.no/no/aktuelt/bruk-av-ki-oker-i-skolen-kunnskapsministeren-varsler-grep/id3146819/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Spørsmål til Skole-Norge 2025</a
+                >.
+              </p>
+            </article>
+
+            <article class="stats__card reveal">
+              <div class="stats__card-heading">
+                <div>
+                  <span class="stats__tag">ARBEIDSLIV</span>
+                  <h3>Unge i KI-utsatte yrker</h3>
+                </div>
+                <span class="stats__main-value stats__main-value--down"
+                  >−6,6 %</span
+                >
+              </div>
+              <p class="stats__description">
+                Sysselsettingen blant arbeidstakere på 21–30 år i de mest
+                KI-eksponerte yrkene har falt siden perioden før ChatGPT ble
+                lansert. Samtidig er den totale sysselsettingen i privat sektor
+                1,5 % høyere enn før.
+              </p>
+
+              <div
+                class="stats__bars"
+                role="img"
+                aria-label="Sysselsettingen blant arbeidstakere mellom 21 og 30 år i de mest KI-eksponerte yrkene har falt med 6,6 prosent, målt mot august til oktober 2022. Samtidig er den totale sysselsettingen i privat sektor 1,5 prosent høyere enn før ChatGPT."
+              >
+                <div class="stats__bar-row">
+                  <div class="stats__bar-label">
+                    <span>Nedgang</span><strong>−6,6 %</strong>
+                  </div>
+                  <div class="stats__track stats__track--negative">
+                    <div
+                      class="stats__bar stats__bar--pink"
+                      style="width: 66%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="stats__scale">
+                  <span>0 %</span><span>−10 %</span>
+                </div>
+              </div>
+              <p class="stats__source">
+                Målt mot gjennomsnittet for august–oktober 2022. Kilde:
+                <a
+                  href="https://kiindeksen.no/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >KI-indeksen — KI og det norske arbeidsmarkedet</a
+                >.
+              </p>
+            </article>
+          </div>
+          <p class="stats__note">
+            Den totale sysselsettingen i privat sektor er likevel 1,5 % høyere
+            enn før ChatGPT. Tallene viser ulike forhold og har ulike skalaer.
+            De kan derfor ikke sammenlignes direkte.
+          </p>
+        </div>
+      </section>
+
       <!-- MYTH -->
       <section class="myth pad" id="myte">
         <div class="inner">
-          <span class="eyebrow">04 — myte eller fakta?</span>
+          <span class="eyebrow">05 — myte eller fakta?</span>
           <div class="myth__header">
             <h2 class="h2 reveal">Fire ting folk <em>tror</em> om KI.</h2>
             <p class="lede reveal">
@@ -505,7 +609,7 @@
       <!-- RULES -->
       <section class="rules pad" id="regler">
         <div class="inner">
-          <span class="eyebrow">05 — overlevelsesguide</span>
+          <span class="eyebrow">06 — overlevelsesguide</span>
           <div class="rules__header">
             <h2 class="h2 reveal">Stopp. Tenk. <em>Sjekk.</em></h2>
             <p class="lede reveal">
@@ -571,7 +675,7 @@
       <!-- QUIZ -->
       <section class="quiz pad" id="quiz">
         <div class="inner">
-          <span class="eyebrow">06 — test deg selv</span>
+          <span class="eyebrow">07 — test deg selv</span>
           <div class="themes__header">
             <h2 class="h2 reveal">Tør du å bli <em>testet?</em></h2>
             <p class="lede reveal">
@@ -620,6 +724,77 @@
         </div>
       </section>
 
+      <!-- BILDEQUIZ -->
+      <section class="quiz image-quiz pad" id="bildequiz">
+        <div class="inner">
+          <span class="eyebrow">08 — bildequiz</span>
+          <div class="themes__header">
+            <h2 class="h2 reveal">Ekte bilde eller <em>KI?</em></h2>
+            <p class="lede reveal">
+              Se på fire bilder og gjett om de er ekte fotografier eller laget
+              med KI. Det er ikke alltid mulig å se forskjellen bare ved å se på
+              bildet.
+            </p>
+          </div>
+
+          <div class="quiz__panel image-quiz__panel reveal">
+            <div id="imageQuizIntro" class="quiz__intro">
+              <div class="quiz__intro-meta">
+                <span>04</span> bilder · ca. <span>1</span> minutt ·<br />
+                <span>ingen</span> tidspress
+              </div>
+              <button
+                id="imageQuizStartBtn"
+                class="btn btn--pink"
+                type="button"
+              >
+                Start bildequizen →
+              </button>
+            </div>
+
+            <div id="imageQuizGame" class="quiz__game">
+              <div class="quiz__progress">
+                <span class="quiz__count" id="imageQuizCount">01 / 04</span>
+                <div class="quiz__bar">
+                  <div class="quiz__bar-fill" id="imageQuizBarFill"></div>
+                </div>
+              </div>
+              <div class="image-quiz__image-frame">
+                <img
+                  id="imageQuizImage"
+                  class="image-quiz__image"
+                  src=""
+                  alt="Bilde til quizen"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="quiz__question" id="imageQuizQuestion">
+                Er dette et ekte fotografi eller laget med KI?
+              </h3>
+              <div
+                class="quiz__answers image-quiz__answers"
+                id="imageQuizAnswers"
+              ></div>
+              <p
+                class="quiz__feedback"
+                id="imageQuizFeedback"
+                aria-live="polite"
+              ></p>
+              <button
+                id="imageQuizNextBtn"
+                class="btn btn--ink quiz__next"
+                type="button"
+                disabled
+              >
+                Neste →
+              </button>
+            </div>
+
+            <div id="imageQuizResult" class="quiz__result"></div>
+          </div>
+        </div>
+      </section>
+
       <!-- CTA -->
       <section class="cta">
         <div class="inner cta__inner">
@@ -658,8 +833,10 @@
             <li><a href="#episode">Episoden</a></li>
             <li><a href="#cast">Deltakere</a></li>
             <li><a href="#temaer">Temaer</a></li>
+            <li><a href="#statistikk">Statistikk</a></li>
             <li><a href="#myte">Myte / Fakta</a></li>
             <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#bildequiz">Bildequiz</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -685,7 +862,6 @@
         <p>Laget som skoleprosjekt · 2026</p>
       </div>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
